@@ -50,6 +50,9 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Get started!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../introducing/">Introducing CRC</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -112,40 +115,153 @@
 <div class="sectionbody">
 <div class="paragraph _abstract">
 <p>CRC presets represent a managed container runtime, and the lower bounds of system resources required by the instance to run it.
-CRC offers presets for:</p>
+Here are various supported presets for CRC along with their minimum system requirements:</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>openshift</code></dt>
-<dd>
-<p>OpenShift Container Platform</p>
-</dd>
-<dt class="hdlist1"><code>okd</code></dt>
-<dd>
-<p>OKD</p>
-</dd>
-<dt class="hdlist1"><code>microshift</code></dt>
-<dd>
-<p>MicroShift</p>
-</dd>
-</dl>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Preset Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">CPUs</th>
+<th class="tableblock halign-left valign-top">RAM</th>
+<th class="tableblock halign-left valign-top">Disk space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>openshift</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift Container Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.5 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35 GB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>okd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OKD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.5 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35 GB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>microshift</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MicroShift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">35 GB</p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>On Microsoft Windows and macOS, the CRC guided installer prompts you for your desired preset.
-On Linux, the OpenShift Container Platform preset is selected by default.
-You can change this selection using the <code class="command">crc config</code> command before running the <code class="command">crc setup</code> command.
-Only one preset can be active at a time.</p>
+On Linux, the OpenShift Container Platform preset is selected by default.</p>
 </div>
-<div class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p><a href="../installing/#minimum-system-requirements" class="xref page">Minimum system requirements</a>.</p>
-</li>
-<li>
-<p><a href="../configuring/#changing-the-selected-preset" class="xref page">Changing the selected preset</a>.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can change this selection using the <code class="command">crc config</code> command before running the <code class="command">crc setup</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Only one preset can be active at a time.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look into each of these presets in detail:</p>
+</div>
+<div class="sect2">
+<h3 id="openshift-preset"><a class="anchor" href="#openshift-preset"></a>OpenShift</h3>
+<div class="paragraph">
+<p><code>openshift</code> preset creates a minimal, single-node cluster for <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/container-platform">Red Hat OpenShift Container Platform</a>. This cluster is very similar to
+real <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/container-platform">Red Hat OpenShift Container Platform</a> set up in cloud environments like AWS, GCP, Azure etc. It&#8217;s only meant to be used
+for development and testing purposes.</p>
+</div>
+<div class="paragraph">
+<p>This preset is the default preset used by CRC if not explicit preset is configured.</p>
+</div>
+<div class="paragraph">
+<p>If you want to configure this preset, you can do it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ crc delete # Remove previous cluster (if present)
+$ crc config set preset openshift # Configure to use openshift preset
+$ crc setup # Initialize environment for cluster
+$ crc start # Start the cluster</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="okd-preset"><a class="anchor" href="#okd-preset"></a>OKD</h3>
+<div class="paragraph">
+<p>OKD preset creates a minimal, single-node cluster for <a href="https://okd.io/docs/project/about">OpenShift Kubernetes Distribution</a>. It
+is an upstream, community-driven project that provides the core components needed to run Kubernetes. It has similar requirements
+to the OpenShift Container Platform preset.</p>
+</div>
+<div class="paragraph">
+<p>If you want to configure this preset, you can do it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ crc delete # Remove previous cluster (if present)
+$ crc config set preset okd # Configure to use okd preset
+$ crc setup # Initialize environment for cluster
+$ crc start # Start the cluster</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="microshift-preset"><a class="anchor" href="#microshift-preset"></a>MicroShift</h3>
+<div class="paragraph">
+<p><a href="https://www.redhat.com/en/topics/edge-computing/microshift">MicroShift</a> is a lightweight Kubernetes container orchestration
+solution designed by <a href="https://www.redhat.com/en">Red Hat</a>. It&#8217;s essentially a smaller, more resource-efficient version of
+<a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift</a>, optimized for edge computing.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This preset shouldn&#8217;t be confused with OpenShift preset. It is tailored for environments with limited resources. OpenShift on
+the other hand, is a full-featured platform designed for larger-scale deployments and comprehensive management. For more details, please
+refer to <a href="https://github.com/openshift/microshift#user-documentation">MicroShift documentation</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you want to configure this preset, you can do it like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ crc delete # Remove previous cluster (if present)
+$ crc config set preset microshift # Configure to use microshift preset
+$ crc setup # Initialize environment for cluster
+$ crc start # Start the cluster</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

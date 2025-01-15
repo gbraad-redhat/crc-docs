@@ -50,6 +50,9 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Get started!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../introducing/">Introducing CRC</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -158,6 +161,79 @@ Set the value of a property starting with <code>skip-check</code> to <code>true<
 </div>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-usage-data-collection"><a class="anchor" href="#configuring-usage-data-collection"></a>Configuring usage data collection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CRC prompts you before use for <a href="https://developers.redhat.com/article/tool-data-collection">optional, anonymous usage data collection to assist with development</a>.
+No personally identifiable information is collected.</p>
+</div>
+<div class="sect2">
+<h3 id="consenting-usage-data-collection"><a class="anchor" href="#consenting-usage-data-collection"></a>Consenting usage data collection</h3>
+<div class="paragraph">
+<p>You can grant consent for usage data collection at any time.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Configure CRC to grant consent for usage data collection.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set consent-telemetry yes</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart your CRC instance to enable the change.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc stop
+$ crc start</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revoking-usage-data-collection"><a class="anchor" href="#revoking-usage-data-collection"></a>Revoking usage data collection</h3>
+<div class="paragraph">
+<p>You can revoke consent for usage data collection at any time.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Configure CRC to revoke consent for usage data collection.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set consent-telemetry no</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Restart your CRC instance to enable the change.</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc stop
+$ crc start</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="https://developers.redhat.com/article/tool-data-collection">Red&#160;Hat Telemetry data collection notice</a>.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

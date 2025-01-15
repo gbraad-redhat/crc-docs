@@ -50,6 +50,9 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Get started!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../introducing/">Introducing CRC</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -386,30 +389,56 @@ For more information, see <a href="#troubleshooting-expired-certificates">Troubl
 <p>If no existing issue addresses the encountered issue, <a href="https://github.com/crc-org/crc/issues/new">create an issue</a> and <a href="https://help.github.com/en/articles/file-attachments-on-issues-and-pull-requests">attach the <strong class="filename"><em>~/.crc/crc.log</em></strong> file</a> to the created issue.
 The <strong class="filename"><em>~/.crc/crc.log</em></strong> file has detailed debugging and troubleshooting information which can help diagnose the problem that you are experiencing. In case you&#8217;re looking for more detailed information about virtual machine startup, state transitions and errors you can
 look into serial console logs created by virtual machine hypervisors. Here are the locations where you can find these logs:</p>
-<div class="ulist">
-<ul>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a href="https://libvirt.org/kbase/debuglogs.html">libvirt</a></dt>
+<dd>
+<p>Find the log file in <code>/var/log/libvirt/qemu/crc.log</code></p>
+</dd>
+<dt class="hdlist1"><a href="https://github.com/crc-org/vfkit">vfkit</a></dt>
+<dd>
+<p>Find the log file in <code>~/.crc/vfkit.log</code></p>
+</dd>
+<dt class="hdlist1"><a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/">hyper-v</a></dt>
+<dd>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Event Logs for Hyper-V</dt>
+<dd>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p><strong>libvirt</strong>: In case of <a href="https://libvirt.org/kbase/debuglogs.html">libvirt</a>, you can find the log file in <code>/var/log/libvirt/qemu/crc.log</code></p>
+<p>Go to start and open <code>Event Viewer</code>.</p>
 </li>
 <li>
-<p><strong>vfkit</strong>: In case of <a href="https://github.com/crc-org/vfkit">vfkit</a>, you can find log file in <code>~/.crc/vfkit.log</code></p>
+<p>Navigate to <code>Applications and Services Logs</code> → <code>Microsoft</code> → <code>Windows</code>.</p>
 </li>
 <li>
-<p><strong>hyper-v</strong>: In case of Hyper-V, there are several options to get logs:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Event Logs for Hyper-V</strong>: Go to start and open <code>Event Viewer</code>, then navigate to <code>Applications and Services Logs</code> → <code>Microsoft</code> → <code>Windows</code>. Here you should be able to find some options for <code>Hyper-V</code>,
-click on <code>Hyper-V-VMMS</code> for Hyper-V Virtual Machine Management logs and <code>Hyper-V-Worker</code> for Hyper-V Worker logs.</p>
+<p>Click <code>Hyper-V-VMMS</code> to view Hyper-V Virtual Machine Management logs.</p>
 </li>
 <li>
-<p><strong>VM Configuration Logs</strong>: Each VM has a set of logs that can be found in the VM configuration folder. By default, this is located in the <code>C:\ProgramData\Microsoft\Windows\Hyper-V</code> folder. For each VM, there is a file called Virtual Machine Log File (<code>vmname.evtx</code>)
-that records the events related to that particular VM.</p>
+<p>Click <code>Hyper-V-Worker</code> to view Hyper-V Worker logs.</p>
 </li>
-</ul>
+</ol>
 </div>
+</dd>
+<dt class="hdlist1">VM Configuration Logs</dt>
+<dd>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Open the Hyper-V configuration directory. By default, it&#8217;s located at : <code>C:\ProgramData\Microsoft\Windows\Hyper-V</code>.</p>
 </li>
-</ul>
+<li>
+<p>In this directory, open your virtual machine log file, such as <code>&lt;virtual_machine_name&gt;.evtx</code>),  that records the events related to your virtual machine.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</dd>
+</dl>
 </div>
 </li>
 </ol>

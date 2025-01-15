@@ -50,6 +50,9 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Get started!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="../introducing/">Introducing CRC</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
@@ -129,7 +132,7 @@
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Preset</th>
-<th class="tableblock halign-left valign-top">AMD63</th>
+<th class="tableblock halign-left valign-top">AMD64</th>
 <th class="tableblock halign-left valign-top">Intel 64</th>
 <th class="tableblock halign-left valign-top">Apple silicon</th>
 </tr>
@@ -355,7 +358,8 @@ On Microsoft Windows and macOS, CRC is available using a guided installer.</p>
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Download the <a href="https://console.redhat.com/openshift/create/local">latest release of CRC</a> for your platform.</p>
+<p>Follow the instruction in the <a href="https://console.redhat.com/openshift/create/local">Red Hat OpenShift Local download page</a>.
+Red Hat OpenShift Local is the distribution of the <code class="command">crc</code> CLI by Red Hat that includes a fully functional OpenShift Container Platform single node bundle.</p>
 </li>
 <li>
 <p>On Microsoft Windows, extract the contents of the archive.</p>
@@ -413,79 +417,6 @@ $ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc</pre>
 </div>
 </li>
 </ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_configuring_usage_data_collection"><a class="anchor" href="#_configuring_usage_data_collection"></a>Configuring usage data collection</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>CRC prompts you before use for <a href="https://developers.redhat.com/article/tool-data-collection">optional, anonymous usage data collection to assist with development</a>.
-No personally identifiable information is collected.</p>
-</div>
-<div class="sect2">
-<h3 id="consenting-usage-data-collection"><a class="anchor" href="#consenting-usage-data-collection"></a>Consenting usage data collection</h3>
-<div class="paragraph">
-<p>You can grant consent for usage data collection at any time.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Configure CRC to grant consent for usage data collection.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ crc config set consent-telemetry yes</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart your CRC instance to enable the change.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ crc stop
-$ crc start</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="revoking-usage-data-collection"><a class="anchor" href="#revoking-usage-data-collection"></a>Revoking usage data collection</h3>
-<div class="paragraph">
-<p>You can revoke consent for usage data collection at any time.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Configure CRC to revoke consent for usage data collection.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ crc config set consent-telemetry no</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Restart your CRC instance to enable the change.</p>
-<div class="listingblock">
-<div class="content">
-<pre>$ crc stop
-$ crc start</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="ulist">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p><a href="https://developers.redhat.com/article/tool-data-collection">Red&#160;Hat Telemetry data collection notice</a>.</p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 </div>

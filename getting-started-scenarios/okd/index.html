@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: CRC Documentation</title>
+    <link rel="canonical" href="https://crc.dev/docs/getting-started-scenarios/okd/">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <button class="navbar-burger" data-target="topbar-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <a href="https://crc.dev/docs/">CRC Documentation</a>
+            </div>
+        </div>
+        <div id="topbar-nav" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item search hide-for-print">
+                    <div id="search-field" class="field">
+                        <input id="search-input" type="text" placeholder="Search the docs">
+                    </div>
+                </div>
+                <a class="navbar-item" href="https://crc.dev/docs">Getting Started Guide</a>
+                <a class="navbar-item" href="https://crc.dev/engineering-docs/">Engineering Docs</a>
+                <a class="navbar-item" href="https://github.com/crc-org/crc/releases">Releases</a>
+                <a class="navbar-item" href="https://github.com/crc-org/crc">Source Code</a>
+            </div>
+        </div>
+    </nav>
+    <script data-goatcounter="https://crc.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ROOT" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="../../introducing/">Getting started with CRC</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../getting-started/">Get started!</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../introducing/">Introducing CRC</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../installing/">Installing CRC</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../using/">Using CRC</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../configuring/">Configuring CRC</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../networking/">Networking</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../administrative-tasks/">Administrative tasks</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../troubleshooting/">Troubleshooting CRC</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Getting started with CRC</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../../introducing/">Getting started with CRC</a></div>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../introducing/" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+<div class="edit-this-page"><a href="https://github.com/crc-org/docs/edit/main/modules/ROOT/pages/getting-started-scenarios/okd.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="paragraph">
+<p>We will be creating a single-node cluster for <a href="https://okd.io/docs/project/about">OpenShift Kubernetes Distribution</a>.</p>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;ve downloaded and installed CRC on your machine, you&#8217;re ready to use CRC by creating a cluster. <a href="https://okd.io/docs/documentation/">OKD</a>
+is not the default cluster type that would be created when no explicit configuration is provided.</p>
+</div>
+<div class="paragraph">
+<p>In order to instruct CRC to create a <a href="https://okd.io/docs/documentation/">OKD</a> cluster, we need to update CRC configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc config set preset okd</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Set up environment for your cluster</strong></p>
+</div>
+<div class="paragraph">
+<p>Before starting cluster, you need to prepare your machine for creating a Virtual Machine. OKD cluster would be started
+inside that Virtual Machine. In order to do that use <a href="../../using/#setting-up" class="xref page"><code>crc setup</code></a> command.</p>
+</div>
+<div class="paragraph">
+<p>Open a terminal with a user account with administrator access (but not logged in as root user) and run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc setup</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Start your cluster</strong></p>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;ve set up environment for your OKD cluster, you can go ahead and start it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc start</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Log into your OKD cluster</strong></p>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;ve created the cluster, and it&#8217;s up and running, you need to log in into your OKD cluster. In order to do that, use OKD CLI (<code class="command">oc</code>).</p>
+</div>
+<div class="paragraph">
+<p>If you already have OpenShift CLI (<code class="command">oc</code>), you can start using it. If not, you can use Run the <code class="command">crc oc-env</code>
+command to print the command needed to add the cached <code class="command">oc</code> executable to your <code>$PATH</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc oc-env</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Get the OpenShift CLI (<code class="command">oc</code>) login command using <code class="command">crc console</code> to login as regular user or admin.</p>
+</div>
+<div class="paragraph">
+<p>Copy login command from this CRC command output and paste it into your terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ crc console --credentials</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Deploy a sample application to your OKD cluster</strong></p>
+</div>
+<div class="paragraph">
+<p>We will be deploying a simple Java application using a tool called <a href="https://eclipse.dev/jkube/docs/openshift-maven-plugin/">Eclipse JKube OpenShift Maven Plugin</a>.</p>
+</div>
+<div class="paragraph">
+<p>In order to follow these steps, you would need to have these installed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://adoptium.net/temurin/releases/">Java Development Kit</a></p>
+</li>
+<li>
+<p><a href="https://maven.apache.org/">Apache Maven</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Once you&#8217;ve installed these dependencies, you can deploy any java application to OKD cluster.</p>
+</div>
+<div class="paragraph">
+<p>Clone Eclipse JKube repository and go to one of the quickstarts:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone https://github.com/eclipse-jkube/jkube.git
+$ cd jkube/quickstarts/maven/quarkus</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run JKube OpenShift Maven Plugin goal to build and deploy application to OKD cluster:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ mvn package oc:build oc:resource oc:apply</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Wait till application pod comes in ready state and access the application via route:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc get routes
+$ curl http://quarkus-default.apps-crc.testing</pre>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
