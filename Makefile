@@ -2,7 +2,7 @@ SHELL := /bin/bash -o pipefail
 
 # Docs build related variables
 DOCS_BUILD_DIR ?= public
-DOCS_BUILD_CONTAINER ?= quay.io/crc-org/antora:3.1.9
+DOCS_BUILD_CONTAINER ?= ghcr.io/crc-org/antora:latest
 DOCS_SERVE_CONTAINER ?= docker.io/httpd:alpine
 DOCS_TEST_CONTAINER ?= docker.io/wjdp/htmltest:latest
 DOCS_BUILD_TARGET ?= ./source/getting_started/master.adoc

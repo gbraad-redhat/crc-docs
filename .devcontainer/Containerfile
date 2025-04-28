@@ -1,4 +1,4 @@
-FROM quay.io/crc-org/antora:3.1.9
+FROM ghcr.io/crc-org/antora:latest
 
 RUN apk update \
     && apk add git
